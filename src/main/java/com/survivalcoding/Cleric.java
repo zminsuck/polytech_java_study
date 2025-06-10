@@ -1,4 +1,5 @@
 package com.survivalcoding;
+import java.util.Random;
 
 public class Cleric {
         // 클레릭 이름
@@ -12,6 +13,7 @@ public class Cleric {
         int hp = MAX_HP;
         int mp = MAX_MP;
 
+        Random random = new Random();
         // 셀프 에이드 마법으로 MP - 5소모 -> MAX_HP 까지 회복
         public void selfAid() {
                 // MAX_MP = 10 마법 실현 -> 5소모 = MAX_MP - mp 5 = 마나 5
@@ -21,5 +23,15 @@ public class Cleric {
                 // System.out.println(this.name + "셀프 에이드를 사용했다!" + this.mp + "마나 5를 소모");
                 this.hp = MAX_HP;
                 // System.out.println(this.name + "HP가 전부 회복되었다!");
+        }
+
+        public int pray(int sec) {
+                // 기도한 초만큼 랜덤하게 MP를 회복
+                this.mp += sec;
+                // 초 만큼 랜덤 수 증가
+                int recover = random.nextInt(3) * sec;
+                int Recovers = Math.min(recover, MAX_MP - mp);
+                mp += Recovers;
+                return Recovers;
         }
 }
