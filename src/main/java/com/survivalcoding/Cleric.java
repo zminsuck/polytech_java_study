@@ -13,7 +13,34 @@ public class Cleric {
         int hp = MAX_HP;
         int mp = MAX_MP;
 
+
+        Cleric(String name, int hp, int mp) {
+                this.name = name;
+                this.hp = hp;
+                this.mp = mp;
+        }
+
+        Cleric(String name, int hp) {
+                this.name = name;
+                this.hp = hp;
+        }
+
+        Cleric(String name) {
+                this.name = name;
+        }
+
+        public void print () {
+                System.out.println("\n이름: " + name);
+                System.out.println("HP: " + hp);
+                System.out.println("MP: " + mp);
+        }
+
+
+
+
+
         Random random = new Random();
+
         // 셀프 에이드 마법으로 MP - 5소모 -> MAX_HP 까지 회복
         public void selfAid() {
                 // MAX_MP = 10 마법 실현 -> 5소모 = MAX_MP - mp 5 = 마나 5
@@ -34,4 +61,5 @@ public class Cleric {
                 mp += Recovers;
                 return Recovers;
         }
+
 }
