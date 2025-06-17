@@ -1,16 +1,16 @@
 package com.survivalcoding;
 
+import com.survivalcoding.assignments_01_instance.exam01.Person;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-        Cleric a = new Cleric ("아서스", 40, 5);
-        Cleric b = new Cleric ("아서스", 35);
-        Cleric c = new Cleric ("아서스");
-        a.print();
-        b.print();
-        c.print();
-
+        Person p = new Person("손민석", 2001);
+        System.out.println(p.getName());      // 손민석
+        System.out.println(p.getBirthYear()); // 2001
+        System.out.println(p.getAge());       // (예: 2025년 기준 25)
+        System.out.println(p);                // 손민석 (2001년생, 나이: 25세)
     }
 }
