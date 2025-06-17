@@ -35,10 +35,6 @@ public class Cleric {
                 System.out.println("MP: " + mp);
         }
 
-
-
-
-
         Random random = new Random();
 
         // 셀프 에이드 마법으로 MP - 5소모 -> MAX_HP 까지 회복
@@ -61,5 +57,4 @@ public class Cleric {
                 mp += Recovers;
                 return Recovers;
         }
-
 }
