@@ -1,7 +1,7 @@
 public class Wizard {
-    int hp;
-    int mp;
-    String name;
+    private int hp;
+    private int mp;
+    private String name;
     private Wand wand;
 
     public Wand getWand() {
@@ -20,7 +20,7 @@ public class Wizard {
     }
 
     public void setMP(){
-        if(mp > 0) {
+        if(mp < 0) {
             throw new IllegalArgumentException("마법사의 MP는 0 이상이어야 한다.");
         }
     }
@@ -31,6 +31,7 @@ public class Wizard {
 
     public void setHp() {
         if (hp < 0) {
+            this.hp = 0; // 음수 방어
             throw new IllegalArgumentException("HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다.");
         }
     }

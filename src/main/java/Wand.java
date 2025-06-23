@@ -1,6 +1,6 @@
 public class Wand {
-    String name; // 지팡이 이름
-    double power; // 지팡이 마력
+    private String name; // 지팡이 이름
+    private double power; // 지팡이 마력
 
     public String getName() {
         return name;
