@@ -1,5 +1,5 @@
 public abstract class TangibleAsset extends Asset implements Thing {
-    private final String color;
+    private String color;
     private double weight;  // Thing 인터페이스 구현을 위한 필드
 
     public TangibleAsset(String name, int price, String color) {

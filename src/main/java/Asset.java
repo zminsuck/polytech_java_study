@@ -1,6 +1,6 @@
 public class Asset {
-    private final String name;
-    private final int price;
+    private String name;
+    private int price;
 
     public Asset(String name, int price) {
         this.name = name;
