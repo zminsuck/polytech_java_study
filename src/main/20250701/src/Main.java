@@ -1,15 +1,20 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        List<Book> list = new ArrayList<>();
+        list.add(new Book("A", LocalDate.of(2024, 1, 1)));
+        list.add(new Book("B", LocalDate.of(2022, 1, 1)));
+        list.add(new Book("C", LocalDate.of(2023, 1, 1)));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Collections.sort(list);
+        list.forEach(System.out::println); // 최신 → 오래된 순 출력
+
+        Set<Book> set = new HashSet<>();
+        set.add(new Book("A", LocalDate.of(2024, 1, 1)));
+        set.add(new Book("A", LocalDate.of(2024, 1, 1)));
+        System.out.println("Set size = " + set.size()); // 중복 제거됨 → 1
+
+        Book b1 = new Book("CloneTest", LocalDate.now());
+        Book b2 = b1.clone();
+        System.out.println("복사본: " + b2);
     }
 }

@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        /*GreatWizard gw = new GreatWizard();
+        /*
+        GreatWizard gw = new GreatWizard();
         PoisonSlime ps = new PoisonSlime("\n슬라임");
         Wizard wizard = new Wizard();
 
@@ -12,6 +13,7 @@ public class Main {
         gw.heal(wizard);
         gw.SuperHeal();
     */
+        /*
         StrongBox<String> box1 = new StrongBox<>(StrongBox.KeyType.PADLOCK);
         box1.put("패드록");
 
@@ -51,5 +53,8 @@ public class Main {
                 break;
             }
         }
+    }
+*/
+
     }
 }

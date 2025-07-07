@@ -1,28 +1,45 @@
-public class Book extends TangibleAsset implements Usable,Thing {
-    private String isbn;
-    private double weight;
+import java.util.*;
 
-    public Book (String name, int price, String color, String makerName) {
-        super(name, price, color); // 부모 생성자 호출
-    }
+public class Book implements Comparable<Book>, Cloneable {
 
-    public String getIsbn() {
-        return isbn;
+    public String title; // 책 제목
+
+    public Date publishDate; // 출간일
+
+    public String comment; // 코멘트
+
+    @Override
+    public Book clone() {
+        Book result = new Book(); // 새로운 Book 객체 생성
+
+        result.title = this.title;
+        result.comment = this.comment;
+        result.publishDate = (Date) this.publishDate.clone();
+
+        return result; // 복사 결과 반환
     }
 
     @Override
-    public void use() {
-        System.out.println(getName() + " 책을 폅니다");
+    public int compareTo(Book other) { // 내림차 순 정렬
+        return other.publishDate.compareTo(this.publishDate);
     }
 
     @Override
-    public double getWeight() {
-        return weight;
+    public boolean equals(Object o) {
+        if (o instanceof Book b) {
+            return title.equals(b.title) && publishDate.equals(b.publishDate);
+        }
+        return false;
     }
 
     @Override
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public int hashCode() {
+        return Objects.hash(title, publishDate);
+    }
+
+    @Override
+    public String toString() {
+        // 제목 (출간일) - 보기 좋게 출력
+        return title + " (" + publishDate + ") - " + comment;
     }
 }
-
